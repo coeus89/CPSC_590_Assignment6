@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondWCFClient", "SecondWC
 		{BC271A84-1780-4039-851F-8E684F87CCDF} = {BC271A84-1780-4039-851F-8E684F87CCDF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PubSubLib", "PubSubLib\PubSubLib.csproj", "{1E7270F3-3C46-48F4-A060-FA2DD2E28EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PubSubHost", "PubSubHost\PubSubHost.csproj", "{D58EA27C-3A0F-4AAF-AD4D-C220B8ECA1E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{FB8DFE2E-85B1-4A4F-9ACD-A54E9DAE88DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB8DFE2E-85B1-4A4F-9ACD-A54E9DAE88DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB8DFE2E-85B1-4A4F-9ACD-A54E9DAE88DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7270F3-3C46-48F4-A060-FA2DD2E28EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7270F3-3C46-48F4-A060-FA2DD2E28EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7270F3-3C46-48F4-A060-FA2DD2E28EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7270F3-3C46-48F4-A060-FA2DD2E28EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58EA27C-3A0F-4AAF-AD4D-C220B8ECA1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58EA27C-3A0F-4AAF-AD4D-C220B8ECA1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58EA27C-3A0F-4AAF-AD4D-C220B8ECA1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58EA27C-3A0F-4AAF-AD4D-C220B8ECA1E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
