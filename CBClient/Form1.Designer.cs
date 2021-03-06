@@ -36,6 +36,10 @@ namespace CBClient
             this.btnTestCallback = new System.Windows.Forms.Button();
             this.lblClientID = new System.Windows.Forms.Label();
             this.txtClientID = new System.Windows.Forms.TextBox();
+            this.btnSubscribe = new System.Windows.Forms.Button();
+            this.btnUnsubscribe = new System.Windows.Forms.Button();
+            this.btnChangePrice = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblA
@@ -96,13 +100,54 @@ namespace CBClient
             this.txtClientID.Size = new System.Drawing.Size(110, 22);
             this.txtClientID.TabIndex = 1;
             // 
+            // btnSubscribe
+            // 
+            this.btnSubscribe.Location = new System.Drawing.Point(474, 37);
+            this.btnSubscribe.Name = "btnSubscribe";
+            this.btnSubscribe.Size = new System.Drawing.Size(140, 40);
+            this.btnSubscribe.TabIndex = 2;
+            this.btnSubscribe.Text = "Subscribe";
+            this.btnSubscribe.UseVisualStyleBackColor = true;
+            this.btnSubscribe.Click += new System.EventHandler(this.btnTestCallback_Click);
+            // 
+            // btnUnsubscribe
+            // 
+            this.btnUnsubscribe.Location = new System.Drawing.Point(710, 37);
+            this.btnUnsubscribe.Name = "btnUnsubscribe";
+            this.btnUnsubscribe.Size = new System.Drawing.Size(140, 40);
+            this.btnUnsubscribe.TabIndex = 2;
+            this.btnUnsubscribe.Text = "Unsubscribe";
+            this.btnUnsubscribe.UseVisualStyleBackColor = true;
+            this.btnUnsubscribe.Click += new System.EventHandler(this.btnTestCallback_Click);
+            // 
+            // btnChangePrice
+            // 
+            this.btnChangePrice.Location = new System.Drawing.Point(474, 121);
+            this.btnChangePrice.Name = "btnChangePrice";
+            this.btnChangePrice.Size = new System.Drawing.Size(140, 40);
+            this.btnChangePrice.TabIndex = 2;
+            this.btnChangePrice.Text = "Change Price";
+            this.btnChangePrice.UseVisualStyleBackColor = true;
+            this.btnChangePrice.Click += new System.EventHandler(this.btnTestCallback_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(710, 139);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(110, 22);
+            this.textBox1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.btnUnsubscribe);
+            this.Controls.Add(this.btnChangePrice);
+            this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.btnTestCallback);
             this.Controls.Add(this.txtB);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtClientID);
             this.Controls.Add(this.txtA);
             this.Controls.Add(this.lblB);
@@ -124,6 +169,10 @@ namespace CBClient
         private System.Windows.Forms.Button btnTestCallback;
         private System.Windows.Forms.Label lblClientID;
         private System.Windows.Forms.TextBox txtClientID;
+        private System.Windows.Forms.Button btnSubscribe;
+        private System.Windows.Forms.Button btnUnsubscribe;
+        private System.Windows.Forms.Button btnChangePrice;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

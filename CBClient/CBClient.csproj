@@ -49,7 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBClient.cs" />
+    <Compile Include="Connected Services\PC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\PS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SP\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -62,6 +72,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STKClient.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +85,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\PC\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PC\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PC\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PC\PubSub.wsdl" />
     <None Include="Connected Services\PS\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -84,6 +105,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\PS\PubSub.wsdl" />
+    <None Include="Connected Services\SP\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SP\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SP\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SP\PubSub.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,7 +132,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\PC\" />
     <WCFMetadataStorage Include="Connected Services\PS\" />
+    <WCFMetadataStorage Include="Connected Services\SP\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\PS\item.disco" />
@@ -114,6 +147,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\PS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PC\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SP\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SP\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
