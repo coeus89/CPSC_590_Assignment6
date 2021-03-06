@@ -28,13 +28,16 @@ namespace CBClient
             try
             {
                 myId = id;
-                stkProxy = new SP.StocksClient(new System.ServiceModel.InstanceContext(this), "SPEP");
+                //SP.IStocks test = new SP.StocksClient(new System.ServiceModel.InstanceContext(this));
+                //stkProxy = new SP.StocksClient(new System.ServiceModel.InstanceContext(this), "SPEP");
+                stkProxy = new SP.StocksClient(new System.ServiceModel.InstanceContext(this));
+                stkProxy.Open();
                 //SPEP is the endpoint name for IStocks interface endpoint
                 stkProxy.SubscribeToStockPrice(sym, triggerPrice);
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -44,9 +47,9 @@ namespace CBClient
             {
                 stkProxy?.UnsubscribeToStockPrice(sym);
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

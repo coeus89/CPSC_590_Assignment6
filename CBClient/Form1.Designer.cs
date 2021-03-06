@@ -39,7 +39,7 @@ namespace CBClient
             this.btnSubscribe = new System.Windows.Forms.Button();
             this.btnUnsubscribe = new System.Windows.Forms.Button();
             this.btnChangePrice = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblA
@@ -108,7 +108,7 @@ namespace CBClient
             this.btnSubscribe.TabIndex = 2;
             this.btnSubscribe.Text = "Subscribe";
             this.btnSubscribe.UseVisualStyleBackColor = true;
-            this.btnSubscribe.Click += new System.EventHandler(this.btnTestCallback_Click);
+            this.btnSubscribe.Click += new System.EventHandler(this.btnSubscribe_Click);
             // 
             // btnUnsubscribe
             // 
@@ -118,7 +118,7 @@ namespace CBClient
             this.btnUnsubscribe.TabIndex = 2;
             this.btnUnsubscribe.Text = "Unsubscribe";
             this.btnUnsubscribe.UseVisualStyleBackColor = true;
-            this.btnUnsubscribe.Click += new System.EventHandler(this.btnTestCallback_Click);
+            this.btnUnsubscribe.Click += new System.EventHandler(this.btnUnsubscribe_Click);
             // 
             // btnChangePrice
             // 
@@ -128,14 +128,14 @@ namespace CBClient
             this.btnChangePrice.TabIndex = 2;
             this.btnChangePrice.Text = "Change Price";
             this.btnChangePrice.UseVisualStyleBackColor = true;
-            this.btnChangePrice.Click += new System.EventHandler(this.btnTestCallback_Click);
+            this.btnChangePrice.Click += new System.EventHandler(this.btnChangePrice_Click);
             // 
-            // textBox1
+            // txtNewPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(710, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtNewPrice.Location = new System.Drawing.Point(710, 139);
+            this.txtNewPrice.Name = "txtNewPrice";
+            this.txtNewPrice.Size = new System.Drawing.Size(110, 22);
+            this.txtNewPrice.TabIndex = 1;
             // 
             // Form1
             // 
@@ -147,7 +147,7 @@ namespace CBClient
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.btnTestCallback);
             this.Controls.Add(this.txtB);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNewPrice);
             this.Controls.Add(this.txtClientID);
             this.Controls.Add(this.txtA);
             this.Controls.Add(this.lblB);
@@ -155,6 +155,7 @@ namespace CBClient
             this.Controls.Add(this.lblA);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +173,7 @@ namespace CBClient
         private System.Windows.Forms.Button btnSubscribe;
         private System.Windows.Forms.Button btnUnsubscribe;
         private System.Windows.Forms.Button btnChangePrice;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewPrice;
     }
 }
 

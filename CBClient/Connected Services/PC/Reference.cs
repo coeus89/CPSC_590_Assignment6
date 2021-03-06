@@ -168,7 +168,7 @@ namespace CBClient.PC {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PC.ILongCompute", CallbackContract=typeof(CBClient.PC.ILongComputeCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PC.ILongCompute", CallbackContract=typeof(PC.ILongComputeCallback))]
     public interface ILongCompute {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILongCompute/Compute")]
@@ -182,16 +182,16 @@ namespace CBClient.PC {
     public interface ILongComputeCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILongCompute/OnComputeResult")]
-        void OnComputeResult(CBClient.PC.ComputeResult res);
+        void OnComputeResult(PC.ComputeResult res);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILongComputeChannel : CBClient.PC.ILongCompute, System.ServiceModel.IClientChannel {
+    public interface ILongComputeChannel : PC.ILongCompute, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LongComputeClient : System.ServiceModel.DuplexClientBase<CBClient.PC.ILongCompute>, CBClient.PC.ILongCompute {
+    public partial class LongComputeClient : System.ServiceModel.DuplexClientBase<PC.ILongCompute>, PC.ILongCompute {
         
         public LongComputeClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
@@ -234,12 +234,12 @@ namespace CBClient.PC {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPriceChangeChannel : CBClient.PC.IPriceChange, System.ServiceModel.IClientChannel {
+    public interface IPriceChangeChannel : PC.IPriceChange, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PriceChangeClient : System.ServiceModel.ClientBase<CBClient.PC.IPriceChange>, CBClient.PC.IPriceChange {
+    public partial class PriceChangeClient : System.ServiceModel.ClientBase<PC.IPriceChange>, PC.IPriceChange {
         
         public PriceChangeClient() {
         }
@@ -270,7 +270,7 @@ namespace CBClient.PC {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PC.IStocks", CallbackContract=typeof(CBClient.PC.IStocksCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PC.IStocks", CallbackContract=typeof(PC.IStocksCallback))]
     public interface IStocks {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStocks/SubscribeToStockPrice", ReplyAction="http://tempuri.org/IStocks/SubscribeToStockPriceResponse")]
@@ -290,16 +290,16 @@ namespace CBClient.PC {
     public interface IStocksCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IStocks/OnPriceChange")]
-        void OnPriceChange(CBClient.PC.StockInfo sinfo);
+        void OnPriceChange(PC.StockInfo sinfo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IStocksChannel : CBClient.PC.IStocks, System.ServiceModel.IClientChannel {
+    public interface IStocksChannel : PC.IStocks, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StocksClient : System.ServiceModel.DuplexClientBase<CBClient.PC.IStocks>, CBClient.PC.IStocks {
+    public partial class StocksClient : System.ServiceModel.DuplexClientBase<PC.IStocks>, PC.IStocks {
         
         public StocksClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
