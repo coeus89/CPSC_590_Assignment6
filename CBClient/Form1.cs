@@ -36,7 +36,7 @@ namespace CBClient
         {
             try
             {
-                stkC.SubscribeToPriceChange("IBM", 128, myId);
+                stkC.SubscribeToPriceChange(txtSymbol.Text, int.Parse(txtTriggerPrice.Text), myId);
             }
             catch(Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CBClient
         {
             try
             {
-                stkC.UnsubscribeToPriceChange("IBM");
+                stkC.UnsubscribeToPriceChange(txtSymbol.Text);
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace CBClient
         private void btnChangePrice_Click(object sender, EventArgs e)
         {
             PC.PriceChangeClient pcc = new PC.PriceChangeClient();
-            pcc.ChangeStockPrice("IBM", double.Parse(txtNewPrice.Text));
+            pcc.ChangeStockPrice(txtSymbol.Text, double.Parse(txtNewPrice.Text));
         }
 
         private void Form1_Load(object sender, EventArgs e)

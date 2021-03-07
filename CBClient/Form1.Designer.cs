@@ -40,6 +40,11 @@ namespace CBClient
             this.btnUnsubscribe = new System.Windows.Forms.Button();
             this.btnChangePrice = new System.Windows.Forms.Button();
             this.txtNewPrice = new System.Windows.Forms.TextBox();
+            this.lblNewPrice = new System.Windows.Forms.Label();
+            this.txtSymbol = new System.Windows.Forms.TextBox();
+            this.txtTriggerPrice = new System.Windows.Forms.TextBox();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblA
@@ -137,16 +142,64 @@ namespace CBClient
             this.txtNewPrice.Size = new System.Drawing.Size(110, 22);
             this.txtNewPrice.TabIndex = 1;
             // 
+            // lblNewPrice
+            // 
+            this.lblNewPrice.AutoSize = true;
+            this.lblNewPrice.Location = new System.Drawing.Point(710, 116);
+            this.lblNewPrice.Name = "lblNewPrice";
+            this.lblNewPrice.Size = new System.Drawing.Size(71, 17);
+            this.lblNewPrice.TabIndex = 3;
+            this.lblNewPrice.Text = "New Price";
+            // 
+            // txtSymbol
+            // 
+            this.txtSymbol.Location = new System.Drawing.Point(504, 83);
+            this.txtSymbol.Name = "txtSymbol";
+            this.txtSymbol.Size = new System.Drawing.Size(110, 22);
+            this.txtSymbol.TabIndex = 1;
+            this.txtSymbol.Text = "IBM";
+            // 
+            // txtTriggerPrice
+            // 
+            this.txtTriggerPrice.Location = new System.Drawing.Point(740, 83);
+            this.txtTriggerPrice.Name = "txtTriggerPrice";
+            this.txtTriggerPrice.Size = new System.Drawing.Size(110, 22);
+            this.txtTriggerPrice.TabIndex = 1;
+            this.txtTriggerPrice.Text = "100";
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Location = new System.Drawing.Point(444, 86);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(54, 17);
+            this.lblSymbol.TabIndex = 3;
+            this.lblSymbol.Text = "Symbol";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(644, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Trigger Price";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSymbol);
+            this.Controls.Add(this.lblNewPrice);
             this.Controls.Add(this.btnUnsubscribe);
             this.Controls.Add(this.btnChangePrice);
             this.Controls.Add(this.btnSubscribe);
             this.Controls.Add(this.btnTestCallback);
             this.Controls.Add(this.txtB);
+            this.Controls.Add(this.txtTriggerPrice);
+            this.Controls.Add(this.txtSymbol);
             this.Controls.Add(this.txtNewPrice);
             this.Controls.Add(this.txtClientID);
             this.Controls.Add(this.txtA);
@@ -174,6 +227,11 @@ namespace CBClient
         private System.Windows.Forms.Button btnUnsubscribe;
         private System.Windows.Forms.Button btnChangePrice;
         private System.Windows.Forms.TextBox txtNewPrice;
+        private System.Windows.Forms.Label lblNewPrice;
+        private System.Windows.Forms.TextBox txtSymbol;
+        private System.Windows.Forms.TextBox txtTriggerPrice;
+        private System.Windows.Forms.Label lblSymbol;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -24,6 +24,13 @@ namespace PubSubLib
             get { return price; }
             set { price = value; }
         }
+        double triggerPrice;
+        [DataMember]
+        public double TriggerPrice
+        {
+            get { return triggerPrice; }
+            set { triggerPrice = value; }
+        }
         DateTime sTime;
         [DataMember]
         public DateTime STime
@@ -31,5 +38,6 @@ namespace PubSubLib
             get { return sTime; }
             set { sTime = value; }
         }
+
     }
 }

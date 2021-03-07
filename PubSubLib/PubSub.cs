@@ -12,6 +12,8 @@ namespace PubSubLib
     public class PubSub : ILongCompute, IStocks, IPriceChange
     {
         static List<IStockCallback> SubsriberList = new List<IStockCallback>();
+        //static List<StockInfo> siList = new List<StockInfo>();
+        static Dictionary<IStockCallback, List<StockInfo>> siDict = new Dictionary<IStockCallback, List<StockInfo>>();
         ComputeResult cr = new ComputeResult();
         Object olock = new object();
 
@@ -58,6 +60,37 @@ namespace PubSubLib
                 IStockCallback callbackChannel = OperationContext.Current.GetCallbackChannel<IStockCallback>();
                 if (SubsriberList.Contains(callbackChannel) == false)
                     SubsriberList.Add(callbackChannel);
+                List<StockInfo> userStocks = null;
+
+                if (siDict.ContainsKey(callbackChannel))
+                {
+                    userStocks = siDict[callbackChannel];
+                }
+                else
+                {
+                    userStocks = new List<StockInfo>();
+                    siDict.Add(callbackChannel, userStocks);
+                }
+                bool containsEntry = false;
+                foreach (StockInfo stock in userStocks)
+                {
+                    if (stock.Symbol == stocksym)
+                    {
+                        stock.Price = triggerPrice;
+                        containsEntry = true;
+                    }
+                }
+                if (!containsEntry)
+                {
+                    StockInfo si = new StockInfo
+                    {
+                        Symbol = stocksym,
+                        TriggerPrice = triggerPrice,
+                        Price = 0,
+                        STime = DateTime.Now
+                    };
+                    userStocks.Add(si);
+                }
             }
             catch (Exception ex)
             {
@@ -72,7 +105,21 @@ namespace PubSubLib
             {
                 IStockCallback callbackChannel = OperationContext.Current.GetCallbackChannel<IStockCallback>();
                 if (SubsriberList.Contains(callbackChannel) == true)
-                    SubsriberList.Remove(callbackChannel);
+                {
+                    foreach (StockInfo stock in siDict[callbackChannel])
+                    {
+                        if (stock.Symbol == stocksym)
+                        {
+                            siDict[callbackChannel].Remove(stock);
+                        }
+                    }
+                    if (siDict[callbackChannel].Count == 0)
+                    {
+                        siDict.Remove(callbackChannel);
+                        SubsriberList.Remove(callbackChannel);
+                    }
+                    //siList.RemoveAt(SubsriberList.IndexOf(callbackChannel));
+                }
             }
             catch (Exception ex)
             {
@@ -87,17 +134,32 @@ namespace PubSubLib
         {
             try
             {
-                if((symbol == "IBM") && (newprice > 120))
+                //if((symbol == "IBM") && (newprice > 120))
+                //{
+                //    // trigger call to teh subsribers
+                //    foreach(IStockCallback icbChannel in SubsriberList)
+                //    {
+                //        StockInfo si = new StockInfo();
+                //        si.Price = newprice;
+                //        si.Symbol = symbol;
+                //        si.STime = DateTime.Now;
+                //        if (((ICommunicationObject)icbChannel).State == CommunicationState.Opened)
+                //            icbChannel.OnPriceChange(si);
+                //    }
+                //}
+                foreach(IStockCallback icbChannel in SubsriberList)
                 {
-                    // trigger call to teh subsribers
-                    foreach(IStockCallback icbChannel in SubsriberList)
+                    List<StockInfo> userStocks = siDict[icbChannel];
+                    foreach (StockInfo stock in userStocks)
                     {
-                        StockInfo si = new StockInfo();
-                        si.Price = newprice;
-                        si.Symbol = symbol;
-                        si.STime = DateTime.Now;
-                        if (((ICommunicationObject)icbChannel).State == CommunicationState.Opened)
-                            icbChannel.OnPriceChange(si);
+                        if (stock.Symbol == symbol)
+                        {
+                            stock.Price = newprice;
+                            stock.STime = DateTime.Now;
+                            if (stock.Price > stock.TriggerPrice)
+                                if (((ICommunicationObject)icbChannel).State == CommunicationState.Opened)
+                                    icbChannel.OnPriceChange(stock);
+                        }
                     }
                 }
             }
